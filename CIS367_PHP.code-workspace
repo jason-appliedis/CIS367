@@ -1,96 +1,86 @@
 {
-	"extensions": {
-		"recommendations": [
-			"felixfbecker.php-debug",
-			"kakumei.php-xdebug",
-			"felixfbecker.php-pack",
-			"linyang95.php-symbols",
-			"MehediDracula.php-constructor",
-			"rifi2k.format-html-in-php"
-		],
-		"unwantedRecommendations": [
-			
-		]
-	},
-	"folders": [
-		{
-			"path": "."
-		},
-	],
-	"settings": {
-		"files.exclude": {
-			"**/.svn": true,
-			"**/.hg": true,
-			"**/CVS": true,
-			"**/.DS_Store": true,
-		},
-		"search.exclude": {
-			"**/student_files": true,
-			"**/.git": true,
-		},
-		"php-docblocker.author": {
-			"name": "Jason ",
-			"email": "Jason.Stoddard@appliedis.com",
-			"class": "ECPI University | CIS367",
-			"date" : "[Enter Current Date] @{currentdate}"
-		},
-		"phpserver.browser": "edge",
-		"phpserver.port": 3000,
-		"mssql.connections": [
-			{
-				"server": "127.0.0.1",
-				"database": "my_guitar_shop1",
-				"port": 3306,
-				"user": "cis367_student",
-				"password": "CIS367password!"
-			}
-		],
-		"sqltools.connections": [
-			{
-				"database": "tech_support",
-				"driver": "MariaDB",
-				"group": "CIS367",
-				"mysqlOptions": {
-					"authProtocol": "default"
-				},
-				"name": "tech_support",
-				"port": 3306,
-				"previewLimit": 50,
-				"server": "localhost",
-				"username": "root",
-				"password": ""
-			},
-			{
-				"database": "my_guitar_shop1",
-				"driver": "MariaDB",
-				"group": "CIS367",
-				"mysqlOptions": {
-					"authProtocol": "default"
-				},
-				"name": "Guitar Shops",
-				"password": "",
-				"port": 3306,
-				"previewLimit": 50,
-				"server": "localhost",
-				"username": "root"
-			}
-		],
-	},
-	
-	"launch": {
-		"version": "0.2.0",
-		"configurations": [
-			{
-				"name": "Launch currently open script",
-				"type": "node",
-				"request": "launch",
-				"program": "${file}",
-				"cwd": "${fileDirname}",
-				"port": 3000,
-				"env": {
-					"phpserver.phpPath":"${env:PHP}"
-				}
-			},
-		]
-	}
+   "extensions": {
+      "recommendations": [
+         "felixfbecker.php-debug",
+         "kakumei.php-xdebug",
+         "felixfbecker.php-pack",
+         "linyang95.php-symbols",
+         "MehediDracula.php-constructor",
+         "rifi2k.format-html-in-php",
+         "vsc-snippets.vsc-php-snippets"
+      ]
+   },
+   "folders": [
+      {
+         "path": "."
+      }
+   ],
+   "settings": {
+      "files.exclude": {
+         "**/.svn": true,
+         "**/.hg": true,
+         "**/CVS": true,
+         "**/.DS_Store": true
+      },
+      "search.exclude": {
+         "**/student_files": true,
+         "**/.git": true
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "php-docblocker.author": {
+         "name": "Jason ",
+         "email": "Jason.Stoddard@appliedis.com",
+         "class": "ECPI University | CIS367",
+         "date": "[Enter Current Date] @{currentdate}"
+      },
+      "phpserver.browser": "edge",
+      "phpserver.port": 3000,
+      "sqltools.connections": [
+         {
+            "database": "tech_support",
+            "driver": "MariaDB",
+            "group": "CIS367",
+            "mysqlOptions": {
+               "authProtocol": "default"
+            },
+            "name": "tech_support",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "root",
+            "password": ""
+         },
+         {
+            "database": "my_guitar_shop1",
+            "driver": "MariaDB",
+            "group": "CIS367",
+            "mysqlOptions": {
+               "authProtocol": "default"
+            },
+            "name": "Guitar Shops",
+            "password": "",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "root"
+         }
+      ]
+   },
+
+   "launch": {
+      "version": "0.2.0",
+      "configurations": [
+         {
+            "name": "Launch currently open script",
+            "type": "php",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "port": 3000,
+            "env": {
+               "phpserver.phpPath": "${env:PHP}"
+            }
+         }
+      ]
+   }
 }
