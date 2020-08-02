@@ -1,11 +1,5 @@
 <?php
-// Start session management with a persistent cookie
-$lifetime = 60 * 60 * 24 * 14;    // 2 weeks in seconds
-// $lifetime = 0;                     // per-session cookie
-session_set_cookie_params($lifetime, '/');
-session_start();
-
-try {
+setSessionData(14);
 // Create a cart array if needed
 if (empty($_SESSION['cart13'])) { 
     $_SESSION['cart13'] = array(); 
@@ -37,7 +31,7 @@ switch($action) {
     case 'add':
         $key = filter_input(INPUT_POST, 'productkey');
         $quantity = filter_input(INPUT_POST, 'itemqty');
-        $cart = add_item($cart, $key, $quantity);
+        add_item($cart, $key, $quantity);
         $_SESSION['cart13'] = $cart;
         include('cart_view.php');
         break;
@@ -46,7 +40,7 @@ switch($action) {
                 FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         foreach($new_qty_list as $key => $qty) {
             if ($cart[$key]['qty'] != $qty) {
-                $cart = update_item($cart, $key, $quantity);
+                update_item($cart, $key, $qty);
                 $_SESSION['cart13'] = $cart;
             }
         }
@@ -59,12 +53,24 @@ switch($action) {
         include('add_item_view.php');
         break;
     case 'empty_cart':
-        unset($_SESSION['cart13']);
+        //clear cart and session data
+        setSessionData(14);
+        unset($cart);
         include('cart_view.php');
         break;
 }
-}
-catch(Exception $ex){
-    echo ex;
+
+function setSessionData($lifeTimeIndays){
+    //destroy current session before setting new one
+    if(!empty($_SESSION)){
+        session_destroy();
+    }
+    // Start session management with a persistent cookie
+    //set session to a day for calculations
+    $oneDayInSec = 86400;
+    $lifetime = $lifeTimeIndays * $oneDayInSec;
+    // $lifetime = 0;                     // per-session cookie
+    session_set_cookie_params($lifetime, '/');
+    session_start();
 }
 ?>
