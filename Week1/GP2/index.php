@@ -1,0 +1,1 @@
+<?php include("view/phpimcludes/main_view.php"); ?>
