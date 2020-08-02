@@ -23,8 +23,6 @@ $futureVal = new IntrestCalc($investment, $interest_rate, $years, $isCompounded)
 
 $getErrMsg = $futureVal->validateEntry();
 // validate investment
-echo count($getErrMsg);
-echo "<br>";
 // if an error message exists, go to the index page
 if (count($getErrMsg) > 3) {
    include('index.php');
