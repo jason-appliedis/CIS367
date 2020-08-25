@@ -37,9 +37,9 @@
         <td><?php echo $customer['email']; ?></td>
         <td><?php echo $customer['password']; ?></td>
         <td>
-        <form action="index.php?customer_manager" method="post" id="updateCustomerForm">
+        <form action="." method="post" id="updateCustomerForm">
             <input type="hidden" name="action" value="updateCustomer" />
-            <input type="hidden" name="customerID" value="<?php echo $customer[
+            <input type="hidden" name="customerLastName" value="<?php echo $customer[
               'lastName'
             ]; ?>" />
             <input type="submit" value="Update" /> 
