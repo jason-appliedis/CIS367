@@ -29,7 +29,7 @@ $technicians = Technician::getTechnicians();
         <input type="hidden" name="action" value="deleteTechnician" />
         <input type="hidden" name="techID" value="<?php echo $technician->getTechID(); ?>" />
         <input type="submit" value="Delete" /> 
-</form>
+    </form>
     </td>
     </tr>
 <?php } ?>
