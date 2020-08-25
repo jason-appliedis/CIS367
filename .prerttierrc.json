@@ -1,8 +1,9 @@
 {
-   "$schema": "http://json.schemastore.org/prettierrc",
-   "phpVersion": "7.4.8",
-   "singleQuote": true,
-   "trailingCommaPHP": false,
-   "braceStyle": "1tbs",
-   "pluginSearchDirs": ["prettier-"]
+  "$schema": "http://json.schemastore.org/prettierrc",
+  "phpVersion": "7.4.8",
+  "plugins": ["@prettier/plugin-php@0.14.3"],
+  "singleQuote": true,
+  "trailingCommaPHP": false,
+  "braceStyle": "1tbs",
+  "pluginSearchDirs": ["prettier-"]
 }
